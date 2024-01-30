@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background color change</title>
+    <style>
+        .buttons{
+            display: flex;
+            justify-content: center;
+            column-gap: 2rem;
+        }
+
+        button{
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- creating buttons to change color -->
+ <div class="buttons">
+    <button>red</button>
+    <button>blue</button>
+    <button>yellow</button>
+    <button>violet</button>
+    <button>teal</button>
+ </div>
+
+ <script>
+    let takeBody = document.body;
+    let buttons = document.getElementsByTagName("button");
+    for(let i = 0; i<buttons.length ; i++){
+        buttons[i].addEventListener('click',function(){
+        let colors = this.textContent;
+        switch(true){
+            case (colors === "red"):
+                takeBody.style.backgroundColor = "red";
+                break;
+
+                case (colors === "blue"):
+                takeBody.style.backgroundColor = "blue";
+                break;
+                
+                case (colors === "yellow"):
+                takeBody.style.backgroundColor = "yellow";
+                break;
+                
+                case (colors === "violet"):
+                takeBody.style.backgroundColor = "violet";
+                break;
+                
+                case (colors === "teal"):
+                takeBody.style.backgroundColor = "teal";
+                break;
+                
+               default:
+                takeBody.style.backgroundColor = "fff"; 
+
+        }
+
+        })
+
+        // here we used hover effect using event listeners " mouseover" and "mouseout"
+
+      buttons[i].addEventListener('mouseover', function(){
+        buttons[i].style.backgroundColor =buttons[i].textContent
+
+      });
+
+        buttons[i].addEventListener('mouseout', function(){
+        buttons[i].style.backgroundColor =""
+
+      });
+    }
+ </script>
+</body>
+</html>
